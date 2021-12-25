@@ -1,0 +1,37 @@
+Maximum and Minimum In Array
+
+https://practice.geeksforgeeks.org/problems/maximum-and-minimum-of-array-elements1523/0/?track=DSA-Foundation-Arrays&batchId=264#
+
+..............................
+Given an array arr of size n, find maximum and minimum elements in the array.
+
+Example 1:
+
+Input:
+N = 4
+arr[] = {5 4 2 1}
+Output: 5 1
+Example 2:
+
+Input:
+N = 1
+arr[] = {8}
+Output: 8 8
+................................
+
+
+int maximumElement(int arr[],int n)
+{
+    //Your code here
+    sort(arr,arr+n);
+    return arr[n-1];
+}
+
+int minimumElement(int arr[],int n)
+{
+    //Your code here
+    sort(arr,arr+n);
+    return arr[0];
+}
+
+......................................
