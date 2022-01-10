@@ -1,0 +1,68 @@
+Juggler Sequence 
+
+.............................
+
+https://practice.geeksforgeeks.org/problems/juggler-sequence3930/1/?category[]=Recursion&category[]=Recursion&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]RecursionproblemStatusunsolveddifficulty[]-1page1category[]Recursion#
+
+...............
+
+Juggler Sequence is a series of integers in which the first term starts with a positive integer number a and the remaining terms are generated from the immediate previous term using the below recurrence relation:
+
+ a_(k+1)={|_a_k^(1/2)_|   for even a_k; |_a_k^(3/2)_|   for odd a_k, 
+
+Given a number N, find the Juggler Sequence for this number as the first term of the sequence.
+
+
+Example 1:
+
+Input: N = 9
+Output: 9 27 140 11 36 6 2 1
+Explaination: We start with 9 and use 
+above formula to get next terms.
+ 
+
+Example 2:
+
+Input: N = 6
+Output: 6 2 1
+Explaination: 
+61/2 = 2. 
+21/2 = 1.
+ 
+
+Your Task:
+You do not need to read input or print anything. Your Task is to complete the function jugglerSequence() which takes N as input parameter and returns a list of integers denoting the generated sequence.
+
+ 
+
+Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(N)
+
+ 
+
+Constraints:
+1 ≤ N ≤ 100
+
+..............................
+
+class Solution{
+public:
+    vector<int> jugglerSequence(int N){
+        // code here
+        vector<int>ans;
+        while(N!=1)
+        {
+            ans.push_back(N);
+            if(N%2 ==0)
+                N = pow(N,0.5);
+            else{
+                N= pow(N,1.5);
+            }
+        }
+        ans.push_back(1);
+        return ans;
+    }
+};
+
+.............................
+
