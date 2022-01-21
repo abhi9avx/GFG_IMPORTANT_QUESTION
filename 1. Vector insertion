@@ -1,0 +1,44 @@
+1. Vector insertion 
+
+
+........................
+
+Given an array arr[] of size N containing integers. The task is to insert elements of given array to vector and return that vector.
+
+Example 1:
+
+Input:
+N = 4
+arr[] = 1 2 3 4
+Output: 
+1 2 3 4
+Explanation:
+In the series 1 1 2 3 5...... the fourth
+fibonacci number is 3.
+Example 2:
+
+Input:
+N = 3
+arr[] = 3 2 1
+Output: 
+3 2 1 
+Explanation:
+Your Task:
+
+You need to complete the function fillVector(arr) contains given array as parameter. You don't have to worry about the input.
+
+...................
+
+vector<int> fillVector(int arr[], int n)
+{
+    // your code here
+   vector<int>temp;
+   for(int i =0 ;i<n;i++)
+   {
+       temp.push_back(arr[i]);
+       
+   }
+   return temp;
+}
+
+........................
