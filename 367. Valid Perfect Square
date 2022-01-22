@@ -1,0 +1,54 @@
+367. Valid Perfect Square
+
+..................
+
+Given a positive integer num, write a function which returns True if num is a perfect square else False.
+
+Follow up: Do not use any built-in library function such as sqrt.
+
+ 
+
+Example 1:
+
+Input: num = 16
+Output: true
+Example 2:
+
+Input: num = 14
+Output: false
+ 
+
+Constraints:
+
+1 <= num <= 2^31 - 1
+
+...............
+
+class Solution {
+public:
+    long long int binarySearch(int n){
+		int s= 0;
+		int e = n;
+		long long int mid = s+(e-s)/2; 
+
+		long long int ans = -1;
+		while(s<=e){
+
+			long long int square = mid*mid;
+			if(square == n)
+				return true;
+			if(square < n){
+				//ans = mid;
+				s =mid+1;
+			}
+			else{
+			   e = mid-1; 
+			}
+			mid = s + (e-s)/2;
+		}
+		return false; 
+	}
+    bool isPerfectSquare(int num) {
+        return binarySearch(num);
+    }
+};
