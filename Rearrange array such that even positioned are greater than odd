@@ -1,0 +1,59 @@
+Rearrange array such that even positioned are greater than odd 
+
+............................
+
+Given an array A of n elements, rearrange the array according to the following relations :
+ A[i] >= A[i-1]  , if i is even.
+ A[i] <= A[i-1]  , if i is odd.[Considering 1-indexed array]
+Return the resultant array.
+
+Example:
+
+Input 1:
+A[] = {1, 2, 2, 1}
+Output:
+1 2 1 2
+Explanation:
+Both 2 are at even positions and 1 at odd satisfying 
+given condition 
+
+Input 2:
+A[] = {1, 3, 2}
+Output:
+1 3 2
+Explanation:
+Here, the array is already sorted as per the conditions.
+ 
+
+Your Task:
+This is a function problem. The input is already taken care of by the driver code. You only need to complete the function assign() that takes an array (arr), sizeOfArray (n), and return the resultant array.
+Note: Generated output will depict whether your returned answer is correct or wrong
+
+Expected Time Complexity: O(NLOG(N)).
+Expected Auxiliary Space: O(1).
+
+
+Constraints:
+
+1 ≤ N ≤ 105
+1 ≤ arr[i] ≤ 106
+
+...............................
+
+public:
+        vector<int> assign(int a[], int n)
+    {
+        // Complete teh function
+        for(int i=1; i<n; i++){ 
+            if(i%2 != 0){ 
+                if(a[i-1] >= a[i])
+                    swap(a[i-1],a[i]);
+                if(a[i+1] >= a[i])
+                    swap(a[i+1],a[i]);
+            }
+        }
+        vector <int> res(a, a+n);
+        return res;
+    }
+    
+    ...............................
