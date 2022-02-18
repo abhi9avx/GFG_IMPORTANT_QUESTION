@@ -1,0 +1,37 @@
+Swap the closest and farthest digits 
+
+.................
+
+Given two numbers N1 and N2, the task is to swap the first digit of the first number with the last digit of the second number and last digit of the first number with the first digit of the second number.
+
+Example 1:
+
+Input:  N1 = "1234", N2 = "5678" 
+Output: 8235 4671
+Explanation: swap {1, 8} and {4, 5}
+Example 2:
+
+Input: N1 = "555", N2 = "55"
+Output: 555 55
+Explanation: swap {5, 5} and {5, 5}
+User Task:
+Your task is to complete the function swapDigits() which takes two strings as input and modifies given strings. You do not need to take any input or print anything.
+Note: In java code, a custom class Str is used instead of String data type because String in java is passed by value.
+
+Expected Time Complexity: O(1)
+Expected Auxiliary Space: O(1)
+
+Constraints:
+2 <= |N1|, |N2| <= 105
+
+........................
+
+public:
+        void swapDigits(string &N1, string &N2)
+        {
+        	//code here.
+        	swap(N1[0],N2[N2.size()-1]);
+
+            swap(N1[N1.size()-1],N2[0]);
+        }
+};
