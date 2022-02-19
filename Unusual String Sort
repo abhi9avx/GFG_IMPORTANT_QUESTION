@@ -1,0 +1,66 @@
+Unusual String Sort 
+
+.......................
+
+Given a string composed of both lowercase and uppercase letters. Sort it in such a manner such that the uppercase and lowercase letter comes in an alternate manner but in sorted way.
+
+Example 1:
+
+Input:
+S = bAwutndekWEdkd
+Output: AbEdWddekkntuw
+Explanation: letters A,E,W are sorted 
+as well as letters b,d,d,d,e,k,k,n,t,u,w are 
+sorted and both appears alternately in the 
+string as far as possible.
+â€‹Example 2:
+
+Input: 
+S = AiBFR
+Output: AiBFR
+Explanation: letters A,B,F,R and sorted 
+as well as letter i. 
+
+User Task:
+You don't need to read input or print anything. You just have to complete the function stringSort () which takes a string as input and returns the sorted string as described in the problem description.
+
+
+Expected Time Complexity: O(|S|).
+Expected Auxiliary Space: O(1). 
+
+
+Constraints:
+1<=|S|<=1000
+
+.........................
+
+public:
+    string stringSort (string s)
+    {
+        //code here.
+        string s1="";
+        string s2="";
+        string str="";
+        for(int i=0;i<s.size();i++){
+            if(s[i]>='A'&& s[i]<='Z'){
+                s1+=s[i];
+            }else{
+                s2+=s[i];
+            }
+        }
+        sort(s1.begin(),s1.end());
+        sort(s2.begin(),s2.end());
+        int i=0,j=0;
+        for(int k=0;k<s.size();k++){
+            if(s1.size()>k){
+                str+=s1[k];
+            }
+            if(s2.size()>k){
+                str+=s2[k];
+            }
+        }
+        return str;
+    }
+};
+
+...........................
