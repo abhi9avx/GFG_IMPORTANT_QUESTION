@@ -1,0 +1,58 @@
+Rope Cutting 
+
+.........................
+
+You are given N ropes. A cut operation is performed on ropes such that all of them are reduced by the length of the smallest rope. Display the number of ropes left after every cut operation until the length of each rope is zero.
+
+Example 1:
+
+â€‹Input : arr[ ] = {5, 1, 1, 2, 3, 5}
+Output : 4 3 2
+Explanation:
+In the first operation, the minimum ropes 
+are 1 So, we reduce length 1 from all of 
+them after reducing we left with 4 ropes and 
+we do the same for rest.
+
+Example 2:
+
+Input : arr[ ] = {5, 1, 6, 9, 8, 11, 2, 
+                               2, 6, 5} 
+Output :  9 7 5 3 2 1
+
+
+Your Task:
+This is a function problem. The input is already taken care of by the driver code. You only need to complete the function longest_Subsequence() that takes an array (arr), sizeOfArray (n) and return the number of ropes that are left after each operation with space if no ropes left after one operation, in this case, return 0. The driver code takes care of the printing.
+
+Expected Time Complexity: O(N*LOG(N)).
+Expected Auxiliary Space: O(1).
+
+ 
+
+Constraints:
+
+1 ≤ N ≤ 105
+
+........................
+
+public:
+        vector<int> RopeCutting(int arr[], int n)
+    {
+        // Complete the function
+        vector<int> res;
+       sort(arr,arr+n);
+       int cut = arr[0];
+       for(int i=0; i<n; i++){
+           
+           if(arr[i]-cut >0 ){
+              res.push_back(n-i);
+           }
+           cut = arr[i];
+       }
+       
+       return res;
+    }
+};
+
+...................................
+
