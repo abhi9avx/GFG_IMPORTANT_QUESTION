@@ -1,0 +1,76 @@
+Square Divisors 
+
+..................
+
+Given a number N.Your task is to print the no of divisors of number N which are perfect squares.
+
+Example 1:
+
+Input: 36
+Output: 4
+Explaination: The factors which are perfect 
+square are 1, 4, 9 and 36.
+Example 2:
+
+Input: 60
+Output: 2
+Explaination: The factors which are perfect 
+squares are 1 and 4.
+Your Task:
+You do not need to read input or print anything. Your task is to complete the function squareFactor() which takes N as input parameter and returns the count of the factors which are perfect squares.
+
+Expected Time Complexity: O(sqrt(N))
+Expected Auxiliary Space: O(1)
+
+Constraints:
+1 ≤ N ≤ 1012  
+
+
+.
+.
+
+
+
+
+
+
+
+
+
+
+
+........................
+
+Given a number N.Your task is to print the no of divisors of number N which are perfect squares.
+
+Example 1:
+
+Input: 36
+Output: 4
+Explaination: The factors which are perfect 
+square are 1, 4, 9 and 36.
+Example 2:
+
+Input: 60
+Output: 2
+Explaination: The factors which are perfect 
+squares are 1 and 4.
+Your Task:
+You do not need to read input or print anything. Your task is to complete the function squareFactor() which takes N as input parameter and returns the count of the factors which are perfect squares.
+
+Expected Time Complexity: O(sqrt(N))
+Expected Auxiliary Space: O(1)
+
+Constraints:
+1 ≤ N ≤ 1012  
+
+int squareFactor(long long N){
+        // code here
+        int c=0;
+       for(int i=1;i<=sqrt(N);i++){
+           if(N%(i*i)==0){
+               c++;
+           }
+       }
+        return c;
+    }
