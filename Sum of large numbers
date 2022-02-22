@@ -1,0 +1,90 @@
+Sum of large numbers 
+
+........................
+
+A pair of two very large positive integers is given. Find their sum.
+ 
+
+Example 1:
+
+Input: s1 = "63457", s2 = "645"
+Output: 64102
+Explanation: 63457 + 645 = 64102
+Example 2:
+
+Input: s1 = "101", s2 = "102"
+Output: 203
+Explanation: 101 + 102 = 203
+ 
+
+
+Your Task:
+You don't need to read or print anything. Your task to complete the function add() which takes two numbers in string format as input parameter and returns their sum in string format.
+ 
+
+Expected Time Complexity: O(max(len(s1), len(s2))
+Expected Space Complexity: O(1)
+ 
+
+Constraints:
+1 <= |s1|, |s2| <= 100000
+
+........................
+
+public:
+	int ChartoDigit(char ch)
+    {
+        return ch-'0';
+    }
+
+    char Digittochar(int digit)
+    {
+        return digit + '0';
+    }
+   	string add(string s1, string s2){
+   	    // Code here
+   	    if(s1.length()>s2.length())
+       {
+           swap(s1 , s2);
+       }
+       
+       //s1 is smaller and s2 is bigger
+       string s = " ";
+       reverse(s1.begin() , s1.end());
+       reverse(s2.begin() , s2.end());
+        int carry = 0 ;
+        int sum = 0;
+        for(int i = 0 ; i<s1.length() ; i++){
+            
+        int digit1 = ChartoDigit(s1[i]);
+        int digit2 = ChartoDigit(s2[i]);
+        
+        sum = digit1+ digit2+carry;
+        int x = sum%10;
+        carry = sum/10;
+          s.push_back(Digittochar(x));
+        }
+        
+        for(int i = s1.length(); i<s2.length() ; i++)
+        {
+              int digit2 = ChartoDigit(s2[i]);
+              sum = digit2 + carry;
+              int x1 = sum%10;
+              carry = sum/10;
+               s.push_back(Digittochar(x1));
+        }
+        
+        if(carry)
+        {
+            s.push_back('1');
+        }
+        
+        reverse(s.begin() , s.end());
+        return s;
+   
+      
+   	}   
+    
+    ............................
+    
+    
