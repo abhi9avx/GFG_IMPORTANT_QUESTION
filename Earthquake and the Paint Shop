@@ -1,0 +1,76 @@
+Earthquake and the Paint Shop 
+
+.....................
+
+Your task is to arrange the all the distinct items in lexicographical ascending order and print them along with their count.
+
+Example 1:
+
+Input:
+N = 5
+A[] =
+["2234597891 zmxvvxbcij 8800654113 jihgfedcba",
+["1234567891 zxyabcvapo 0123434908 padmadngaa",
+["1234567891 abcdefghij 9876543219 jihgfedcba",
+["2234597891 zmxvvxbcij 8800654113 jihgfedcba",
+["9120121291 zmxvvxbcij 0912114113 mnvxbedcba"]
+Output:
+1234567891 abcdefghij 9876543219 jihgfedcba 1
+1234567891 zxyabcvapo 0123434908 padmadngaa 1
+2234597891 zmxvvxbcij 8800654113 jihgfedcba 2
+9120121291 zmxvvxbcij 0912114113 mnvxbedcba 1
+Explanation:
+We have 5 items (40 digit alphanumeric codes) 
+here. We arrange the items based on the 
+lexicographical order of their alpha-numeric 
+code. Distinct items are printed only once. 
+The count of the items describes how many 
+such items are there, so items that appear 
+more than once have their count greater than 1.
+Example 2:
+
+Input:
+N = 4
+A[] =
+["3122049353 onafrnbhtr 9822827304 yzfhdgzcvx", 
+["3077357272 tojkoumxxs 0732733933 hbivwmrjhj", 
+["2992299540 lpvkgykmlk 6946169466 vdqwvywwgg", 
+["3077357272 tojkoumxxs 0732733933 hbivwmrjhj"]
+Output:
+2992299540 lpvkgykmlk 6946169466 vdqwvywwgg  1
+3077357272 tojkoumxxs 0732733933 hbivwmrjhj  2
+3122049353 onafrnbhtr 9822827304 yzfhdgzcvx  1
+Explanation:
+Out of the 4 items here only 1 is repeated.
+Your Task:
+You don't need to read input or print anything. Your task is to complete the function sortedStrings() which takes an integer N and an array of strings A[ ] and returns the array in sorted order along with the frequency of each distinct string.
+
+Expected Time Complexity:O(N)
+Expected Auxillary Space:O(N)
+
+Constraints:
+1 ≤ N ≤ 10000
+
+..........................
+
+vector<alphanumeric> sortedStrings(int N, vector<string> A) {
+        // code here
+        map<string,int>m;
+       for(auto it:A)
+       {
+           m[it]++;
+       }
+       vector<alphanumeric>ans;
+       for(auto it:m)
+       {
+           alphanumeric obj;
+           obj.name=it.first;
+           obj.count=it.second;
+           ans.push_back(obj);
+       }
+       return ans;
+    }
+};
+
+............................
+
