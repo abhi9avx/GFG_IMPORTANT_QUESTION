@@ -1,0 +1,59 @@
+Fact Digit Sum 
+
+.........................
+A(X) for positive integer X is the sum of factorials of its digits. For example, A(154) = 1! + 5! + 4!= 145.
+Given a number N, find the minimum number X such that A(X) = N. 
+
+ 
+
+Example 1:
+
+Input: N = 40321
+Output: 18
+Explanation: A(18)=1!+ 8! =40321 
+Note that A(80) = A(81) is also 
+40321, But 18 is the smallest 
+number.
+ 
+
+Example 2:
+
+Input: N = 5040
+Output: 7
+Explanation: A(7) = 7! = 5040.
+ 
+
+Your Task:
+You don't need to read or print anything. Your task is to complete the function FactDigit() which takes N as input parameter and returns a list of digits which represent the number X.
+ 
+
+Expected Time Complexity: O(K) where K ≤ 106
+Expected Space Complexity: O(K)
+ 
+
+Constraints:
+1 ≤ N ≤ 109
+.............................
+	vector<int> FactDigit(int N)
+	{
+	    // Code here
+	    int i,p=N;
+	    map<int,int> m;
+	    vector<int> v;
+	    m[1]=1;
+	    for(i=2;i<10;i++)
+	        m[i]=(m[i-1]*i);
+	    i=9;
+	    while(p>0)
+	    {
+	        if(m[i]>p)
+	            i--;
+	        else
+	        {
+	            p-=m[i];
+	            v.push_back(i);
+	        }
+	    }
+	    sort(v.begin(),v.end());
+	    return v;     
+	}
